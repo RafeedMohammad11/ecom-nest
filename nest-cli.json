@@ -1,8 +1,41 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/e-commerce-monorepo/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/e-commerce-monorepo/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/e-commerce-monorepo",
+  "projects": {
+    "e-commerce-monorepo": {
+      "type": "application",
+      "root": "apps/e-commerce-monorepo",
+      "entryFile": "main",
+      "sourceRoot": "apps/e-commerce-monorepo/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/e-commerce-monorepo/tsconfig.app.json"
+      }
+    },
+    "inventory-service": {
+      "type": "application",
+      "root": "apps/inventory-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/inventory-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/inventory-service/tsconfig.app.json"
+      }
+    },
+    "order-service": {
+      "type": "application",
+      "root": "apps/order-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/order-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order-service/tsconfig.app.json"
+      }
+    }
   }
 }
