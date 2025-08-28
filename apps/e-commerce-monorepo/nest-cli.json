@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "shared-events": {
+      "type": "library",
+      "root": "libs/shared-events",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared-events/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared-events/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
